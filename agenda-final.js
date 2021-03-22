@@ -2,8 +2,6 @@
 import toShowPeopleList from "./build/Main.js";
 
 
- import {prueba} from "./build/Prueba.js";
-
 window.onload = function() {
     getAgenda()
 };
@@ -13,11 +11,7 @@ const getAgenda = () => {
 
     let agendaContainer = document.querySelector(".agenda-container");
     
-    console.log("agendaContainer", agendaContainer);
-    
     const peopleList = toShowPeopleList();
-    
-    console.log("peopleList ==>", peopleList);
 
     const list = document.createElement("ul");
 
@@ -64,7 +58,6 @@ const getAgenda = () => {
             telefonos.classList.add("card__title");
             allElementsWrapper.appendChild(telefonos);
             person._telefonos.forEach(telf => {
-                console.log(telf)
                 const telefono = createParagraph(`(${telf._tipo}) ${telf._numero}`);
                 allElementsWrapper.appendChild(telefono);
             });
@@ -75,7 +68,6 @@ const getAgenda = () => {
 
             allElementsWrapper.appendChild(mails);
             person._mails.forEach(mail => {
-                console.log(mail)
                 const mailELem = createParagraph(`(${mail._tipo}) ${mail._direccion}`);
                 allElementsWrapper.appendChild(mailELem);
             });
